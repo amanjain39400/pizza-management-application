@@ -1,0 +1,47 @@
+from tkinter import *
+import time
+def Adminlogin():
+    scr=Tk()
+    scr.title("Janta Restaurant")
+    scr.geometry("1366x768")
+    #scr.resizable(False, False)
+    fr=Frame(scr,height=150,width=1366)
+    c=Canvas(fr,height=150,width=1366)
+    c.pack()
+    logo=PhotoImage(file="../logo.PNG")
+    c.create_image(683,75,image=logo)
+    home=Button(fr,text="Home",bg="#0b1335",cursor="hand2",fg="white",bd=5,font=("default",16,'bold'))
+    home.place(x=1000,y=90)
+    localtime=time.asctime(time.localtime(time.time()))
+    c.create_text(1000,50,text=localtime,fill="white",font=("default",16))
+    fr.pack(fill=BOTH,expand=1)
+    f1=Frame(scr,height=618,width=1366)
+    
+    c=Canvas(f1,height=618,width=1366)
+    c.pack()
+    logo1=PhotoImage(file="../pizzamain.png")
+    c.create_image(683,309,image=logo1)
+    c.create_rectangle(350,100,1016,450,fill="#d3ede6",outline="white",width=6)
+    log=Label(f1,text="ADMIN LOGIN",fg="white",bg="#0b1335",width=31,font=("default",27))
+    log.place(x=357,y=110)
+    lab1=Label(f1,text="UserName",bg="#d3ede6",font=("cooper black",22))
+    lab1.place(x=400,y=200)
+    user=Entry(f1,bg="white",font=("cooper black",22),bd=5)
+    user.place(x=650,y=200)
+    lab2=Label(f1,text="Password",bg="#d3ede6",font=("cooper black",22))
+    lab2.place(x=405,y=270)
+    pasd=Entry(f1,bg="white",font=("cooper black",22),bd=5)
+    pasd.place(x=650,y=270)
+    lg=Button(f1,text="Login",cursor="hand2",fg="white",bg="#0b1335",font=("copper black",20,'bold'),bd=5)
+    lg.place(x=650,y=350)
+    cl=Button(f1,text="Clear",cursor="hand2",fg="white",bg="#0b1335",font=("copper black",20,'bold'),bd=5)
+    cl.place(x=400,y=350)
+    rg=Button(f1,text="Exit",fg="white",cursor="hand2",bg="#0b1335",bd=5,font=("cooper black",20))
+    rg.place(x=900,y=350)
+    
+    f1.pack(fill=BOTH,expand=1)
+    scr.mainloop()
+
+
+if __name__=="__main__":
+    x=Adminlogin()
